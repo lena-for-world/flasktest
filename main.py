@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home() :
-    return 'hello home'
+    return 'hello home!'
 
 @app.route('/pic', methods=['GET', 'POST'])
 def pic() :
