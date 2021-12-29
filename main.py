@@ -9,11 +9,12 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 @app.route('/')
-def home() :
-    return 'hello home!'
+def home_hi():
+    print('hello')
+    return 'hello!!'
 
 @app.route('/pic', methods=['GET', 'POST'])
-def pic() :
+def pic():
     if request.method == 'POST' :
         f = request.files['file']
         filename = secure_filename(f.filename)
