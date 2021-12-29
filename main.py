@@ -15,11 +15,13 @@ def home_hi():
 
 @app.route('/pic', methods=['GET', 'POST'])
 def pic():
-    if request.method == 'POST' :
+    if request.method == 'POST':
         f = request.files['file']
         filename = secure_filename(f.filename)
         f.save('C:/Users/User/Desktop/image/' + filename)
         return render_template('img.html', image_file="C:/Users/User/Desktop/image/"+filename)
+    if request.method == 'GET':
+        return 'pic get method'
 
 if __name__ == '__main__' :
     # 실행할 host, port 파라미터로 넣기
