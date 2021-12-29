@@ -2,6 +2,7 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import os
 from flask import Flask, render_template, send_file, request
 from werkzeug.utils import secure_filename
 
@@ -19,9 +20,9 @@ def pic() :
         f.save('C:/Users/User/Desktop/image/' + filename)
         return render_template('img.html', image_file="C:/Users/User/Desktop/image/"+filename)
 
-#if __name__ == '__main__' :
+if __name__ == '__main__' :
     # 실행할 host, port 파라미터로 넣기
-#    app.run()
+    app.run(host="0.0.0.0", port=5000)
 
 
 
