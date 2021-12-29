@@ -22,14 +22,8 @@ def pic() :
 
 if __name__ == '__main__' :
     # 실행할 host, port 파라미터로 넣기
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get('PORT', 5000))
+    print(port)
     app.run(host='0.0.0.0', port=port)
-
-
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print('start')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
