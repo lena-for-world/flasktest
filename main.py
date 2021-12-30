@@ -19,14 +19,13 @@ def pic():
         f = request.files['file']
         filename = secure_filename(f.filename)
         f.save('C:/Users/User/Desktop/image/' + filename)
-        return render_template('img.html', image_file="C:/Users/User/Desktop/image/"+filename)
+        return send_file('C:/Users/User/Desktop/image/pic.jpg', mimetype='image/jpg') # 테스트
     if request.method == 'GET':
         return 'pic post method'
 
 if __name__ == '__main__' :
     # 실행할 host, port 파라미터로 넣기
     port = int(os.environ.get('PORT', 5000))
-    print(port)
     app.debug = True
     app.run(host='0.0.0.0', port=port)
 
